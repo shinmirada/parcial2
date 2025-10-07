@@ -1,164 +1,327 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Folleto - Gestión Inadecuada de Residuos Sólidos</title>
-  <style>
-    :root{
-      --bg:#eaf7f8;
-      --card:#ffffff;
-      --accent1:#0b7a83;
-      --accent2:#69b3a2;
-      --muted:#536b73;
-      --glass: rgba(255,255,255,0.6);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,var(--bg),#f5fbfb); color:#08323a; padding:20px; display:flex; justify-content:center}
-    .brochure{width:100%;max-width:1200px;background:var(--card);box-shadow:0 20px 60px rgba(3,19,34,0.08);display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:12px;overflow:hidden}
-    /* Panels */
-    .panel{padding:34px;display:flex;flex-direction:column;gap:12px;min-height:260px}
-    .panel-1{background:linear-gradient(135deg,var(--accent2),var(--accent1));color:white;align-items:center;justify-content:center;text-align:center}
-    .logo{width:98px;height:98px;border-radius:14px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 6px auto}
-    h1{font-size:1.5rem;line-height:1.15;margin-bottom:6px}
-    .subtitle{opacity:0.95;font-weight:600}
-    .authors{background:rgba(255,255,255,0.06);padding:10px;border-radius:8px;font-size:0.88rem}
-    .panel-2{background:#f8fbfb;border-right:4px solid var(--accent1)}
-    .panel-3{background:#ffffff;border-right:4px solid var(--accent1)}
-    .panel-4{background:#f8fbfb;grid-column:span 2}
-    .panel-5{background:#ffffff;border-left:4px solid var(--accent1)}
-
-    h2{color:var(--accent1);font-size:1.15rem;border-bottom:3px solid rgba(11,122,131,0.12);padding-bottom:8px}
-    p{font-size:0.95rem;color:#0b3b44;line-height:1.45;text-align:justify}
-    .stat{background:linear-gradient(180deg,#ffffff, #f0fffd);padding:12px;border-radius:8px;border:1px solid rgba(11,122,131,0.06);box-shadow:0 6px 20px rgba(7,45,46,0.03)}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    ul{margin-left:18px}
-    .btns{display:flex;gap:10px;align-items:center;margin-top:8px}
-    .btn{background:var(--accent1);color:white;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px}
-    .btn-outline{background:transparent;border:2px solid var(--accent1);color:var(--accent1);padding:8px 10px;border-radius:8px;font-weight:700}
-    .ref{font-size:0.85rem;color:var(--muted)}
-    .cite-inline{color:var(--accent1);font-weight:700}
-    .refs{font-size:0.82rem;color:var(--muted);line-height:1.4}
-    .collapsible{background:transparent;border:0;padding:6px 0;font-weight:700;color:var(--accent1);cursor:pointer;display:flex;align-items:center;gap:8px}
-    .collapsible + .content{max-height:0;overflow:hidden;transition:max-height 0.28s ease}
-    .content.open{max-height:1000px;padding-top:8px}
-    footer{padding:18px;text-align:center;background:linear-gradient(0deg,#f0fbfb,transparent);font-size:0.9rem;color:var(--muted)}
-    @media (max-width:1000px){.brochure{grid-template-columns:1fr;}.panel-4{grid-column:span 1}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Inadecuada de Residuos Sólidos - Quintas de la Marina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .folleto {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitulo {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+        
+        .integrantes {
+            background: #34495e;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+        
+        .integrantes h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .integrantes p {
+            font-size: 1.1em;
+        }
+        
+        .contenido {
+            padding: 40px;
+        }
+        
+        .seccion {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #2ecc71;
+        }
+        
+        .seccion h2 {
+            color: #27ae60;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .seccion h2::before {
+            content: "●";
+            color: #2ecc71;
+        }
+        
+        .problema-formulacion {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 2px solid #2ecc71;
+        }
+        
+        .problema-formulacion strong {
+            color: #27ae60;
+            font-size: 1.1em;
+        }
+        
+        .objetivos-lista {
+            margin-top: 15px;
+        }
+        
+        .objetivo-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .objetivo-general {
+            border-left-color: #e74c3c;
+            background: #fef5f5;
+        }
+        
+        .objetivo-especifico {
+            border-left-color: #3498db;
+        }
+        
+        .imagen-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .imagen-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .referencias {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .referencias h2 {
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+        
+        .referencias ol {
+            margin-left: 20px;
+        }
+        
+        .referencias li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        .icono-residuo {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .folleto {
+                box-shadow: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="brochure" role="document" aria-label="Folleto - Gestión Inadecuada de Residuos Sólidos">
-    <!-- Portada -->
-    <div class="panel panel-1" role="region" aria-label="Portada">
-      <div class="logo" aria-hidden="true">
-        <!-- recycling SVG -->
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reciclaje">
-          <path d="M21 12l-3-3v2H9v2h9v1l3-2zM3 12l3 3v-2h9v-2H6V10L3 12z" fill="white" opacity="0.95"/>
-          <path d="M12 2l2.2 3.6L18 6l-3.2 1.4L12 11 9.2 7.4 6 6l3.8-.4L12 2z" fill="white" opacity="0.9"/>
-        </svg>
-      </div>
-      <h1>Gestión Inadecuada de Residuos Sólidos<br><small style="font-size:0.82rem;opacity:0.95">Quintas de la Marina — Cultura Investigativa</small></h1>
-      <div class="subtitle">Proyecto Parcial II</div>
-      <div class="authors" style="margin-top:12px;text-align:left;width:100%">
-        <strong>Integrantes:</strong><br>
-        Roberto Carlos Medina · Dilan Buelvas · Juan Esteban Muñoz · Juan Esteban Giraldo Ruiz<br>
-        <span style="font-size:0.85rem;opacity:0.9;margin-top:6px;display:inline-block">Docente: Claudia Marcela Muñoz Guzmán</span>
-      </div>
-      <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
-        <a class="btn" href="#imprimir" id="printBtn" title="Imprimir folleto (abrirá diálogo de impresión)">🖨️ Imprimir</a>
-        <a class="btn-outline" href="PARCIAL2_GestionResiduos.html" download title="Descargar HTML">⬇️ Descargar</a>
-      </div>
-    </div>
-
-    <!-- Problema -->
-    <div class="panel panel-2" role="region" aria-label="Planteamiento del problema">
-      <h2>Planteamiento del problema</h2>
-      <p>En el barrio Quintas de la Marina existe un contenedor comunitario para residuos sólidos que, al llenarse en los días de recolección, provoca que los habitantes depositen basura alrededor o en zonas verdes cercanas, generando malos olores, proliferación de plagas y deterioro del espacio público [1].</p>
-      <div class="stat" style="margin-top:8px">
-        <strong>Factores asociados:</strong>
-        <ul>
-          <li>Insuficiencia de infraestructura (un solo contenedor por zona).</li>
-          <li>Falta de cultura ciudadana en disposición y separación de residuos.</li>
-          <li>Intervención de recicladores informales que dispersan residuos.</li>
-        </ul>
-      </div>
-
-      <button class="collapsible" aria-expanded="false" onclick="toggleColl(this)">🔎 Ver formulación</button>
-      <div class="content" id="formulacion">
-        <p style="margin-top:8px"><strong>Formulación del problema:</strong> ¿Por qué la acumulación y dispersión de residuos alrededor del contenedor comunitario en Quintas de la Marina sigue ocurriendo a pesar de las jornadas municipales de recolección y sensibilización? [1]</p>
-      </div>
-    </div>
-
-    <!-- Objetivos -->
-    <div class="panel panel-3" role="region" aria-label="Objetivos">
-      <h2>Objetivos</h2>
-      <div class="grid">
-        <div>
-          <h3 style="color:var(--accent1);margin-bottom:6px">Objetivo general</h3>
-          <div class="stat">Diseñar una propuesta de comunicación y gestión comunitaria para mejorar la disposición de residuos sólidos en Quintas de la Marina, reduciendo la acumulación alrededor del contenedor y fomentando prácticas de separación en la fuente [2].</div>
+    <div class="folleto">
+        <div class="header">
+            <h1>🌱 Gestión Inadecuada de Residuos Sólidos en Quintas de la Marina</h1>
+            <p class="subtitulo">Propuesta de Investigación Aplicada</p>
         </div>
-        <div>
-          <h3 style="color:var(--accent1);margin-bottom:6px">Objetivos específicos</h3>
-          <ol style="padding-left:18px">
-            <li>Realizar una campaña informativa y educativa puerta a puerta sobre horarios y buenas prácticas de disposición [2].</li>
-            <li>Proponer instalación de contenedores adicionales y señalética en puntos críticos [2].</li>
-            <li>Crear un comité vecinal de vigilancia ambiental y coordinación con recicladores formales [1][2].</li>
-          </ol>
+        
+        <div class="integrantes">
+            <h3>Equipo de Investigación</h3>
+            <p>Roberto Carlos Medina | Dilan Buelvas | Juan Esteban Muñoz | Juan Esteban Giraldo Ruiz</p>
+            <p style="margin-top: 10px; font-size: 0.95em;">Cultura Investigativa IV Semestre - Ingeniería de Software</p>
         </div>
-      </div>
-      <div style="margin-top:6px" class="ref">(Citas en texto en formato IEEE: [1], [2], [3])</div>
+        
+        <div class="contenido">
+            <div class="imagen-container">
+                <div class="imagen-placeholder">
+                    <div>
+                        <div class="icono-residuo">♻️</div>
+                        <div class="icono-residuo">🗑️</div>
+                        <div class="icono-residuo">🌍</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seccion">
+                <h2>Planteamiento del Problema</h2>
+                <p style="margin-bottom: 15px;">
+                    En el barrio Quintas de la Marina existe un problema recurrente relacionado con la gestión inadecuada de residuos sólidos. El contenedor comunitario designado para la recolección de basuras presenta una capacidad insuficiente que, al alcanzar su límite en los días establecidos para la recolección, genera que los habitantes depositen los residuos en las zonas aledañas, incluyendo áreas verdes y espacios públicos [1]. Esta situación compromete no solamente la estética del barrio, sino que también representa un riesgo sanitario significativo al facilitar la proliferación de plagas como roedores, cucarachas y moscas que afectan directamente la salud y el bienestar de toda la comunidad [1].
+                </p>
+                <p style="margin-bottom: 15px;">
+                    La problemática se agrava debido a múltiples factores identificados en el diagnóstico inicial, entre los cuales se destacan la falta de cultura ciudadana en el manejo apropiado de residuos, la actividad de recicladores informales que rompen las bolsas generando dispersión de basura, y la ausencia de control comunitario efectivo [1]. Adicionalmente, aunque el municipio de Armenia ha implementado programas como "Armenia te quiero limpia" y ha actualizado el Plan de Gestión Integral de Residuos Sólidos en 2023, la participación comunitaria en Quintas de la Marina sigue siendo limitada, evidenciando una desconexión entre las iniciativas municipales y la realidad del barrio [1]. Este problema se repite semanalmente los días lunes, miércoles y viernes, afectando directamente a los vecinos inmediatos con malos olores y malestar físico, especialmente en niños que juegan en las cercanías, convirtiendo esta situación en un problema persistente que requiere atención inmediata [1].
+                </p>
+                
+                <div class="problema-formulacion">
+                    <strong>Formulación del Problema:</strong>
+                    <p style="margin-top: 10px; font-size: 1.05em;">
+                        ¿Cómo mejorar la gestión de residuos sólidos en el barrio Quintas de la Marina para reducir la acumulación de basura alrededor del contenedor comunitario y mitigar los impactos sanitarios y ambientales asociados?
+                    </p>
+                </div>
+            </div>
+            
+            <div class="imagen-container">
+                <div class="imagen-placeholder" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3em;">⚠️</div>
+                        <div style="font-size: 1.2em; margin-top: 10px;">Problema Sanitario</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seccion">
+                <h2>Objetivos</h2>
+                
+                <div class="objetivos-lista">
+                    <div class="objetivo-item objetivo-general">
+                        <strong>Objetivo General:</strong>
+                        <p style="margin-top: 8px;">
+                            Analizar la gestión inadecuada de residuos sólidos en el barrio Quintas de la Marina para proponer estrategias integrales que mejoren las prácticas de disposición, reduzcan los riesgos sanitarios y promuevan la participación comunitaria en el manejo sostenible de los residuos.
+                        </p>
+                    </div>
+                    
+                    <div class="objetivo-item objetivo-especifico">
+                        <strong>Objetivo Específico 1:</strong>
+                        <p style="margin-top: 8px;">
+                            Identificar los factores que contribuyen a la acumulación inadecuada de residuos sólidos alrededor del contenedor comunitario, incluyendo aspectos de infraestructura, comportamiento ciudadano y actividades de reciclaje informal.
+                        </p>
+                    </div>
+                    
+                    <div class="objetivo-item objetivo-especifico">
+                        <strong>Objetivo Específico 2:</strong>
+                        <p style="margin-top: 8px;">
+                            Evaluar el nivel de conocimiento y participación de los habitantes de Quintas de la Marina respecto a las iniciativas municipales de gestión de residuos y programas como "Armenia te quiero limpia" y el Plan de Gestión Integral de Residuos Sólidos.
+                        </p>
+                    </div>
+                    
+                    <div class="objetivo-item objetivo-especifico">
+                        <strong>Objetivo Específico 3:</strong>
+                        <p style="margin-top: 8px;">
+                            Diseñar recomendaciones prácticas y viables que incluyan mejoras en la infraestructura de recolección, campañas educativas de sensibilización comunitaria y mecanismos de coordinación con recicladores formales para la gestión sostenible de residuos en el barrio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="imagen-container">
+                <div class="imagen-placeholder" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3em;">🎯</div>
+                        <div style="font-size: 1.2em; margin-top: 10px;">Objetivos del Proyecto</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seccion">
+                <h2>Justificación</h2>
+                <p style="margin-bottom: 15px;">
+                    La presente investigación se justifica por la necesidad urgente de abordar un problema de salud pública y calidad de vida que afecta directamente a los habitantes del barrio Quintas de la Marina. La gestión inadecuada de residuos sólidos no es solamente un problema estético o ambiental, sino que representa una amenaza sanitaria real documentada en las entrevistas realizadas, donde los residentes reportan la presencia persistente de plagas como roedores, cucarachas y moscas, además de malestar físico en miembros de la comunidad, especialmente en niños [1]. Según datos municipales, Armenia incrementó su recolección diaria de residuos en un 25% durante 2023, pasando de 280 a casi 350 toneladas diarias, lo que evidencia un crecimiento significativo en la generación de residuos que requiere soluciones efectivas a nivel barrial [1]. Esta investigación es relevante porque busca cerrar la brecha entre las iniciativas municipales existentes y su implementación efectiva en comunidades específicas, generando conocimiento aplicable que puede replicarse en otros barrios con problemáticas similares.
+                </p>
+                <p>
+                    Además, esta investigación contribuye al cumplimiento de los objetivos del Plan de Gestión Integral de Residuos Sólidos actualizado en 2023 y alineado con la visión "Armenia Capital Verde" [1]. A pesar de que el municipio ha implementado programas como "Basura Cero" que logró una tasa de aprovechamiento del 64.74% en el Centro Administrativo Municipal [1], existe una desconexión evidente en la aplicación de estas estrategias exitosas a nivel comunitario. La investigación es pertinente porque aborda factores clave identificados como la infraestructura insuficiente, la falta de educación ciudadana, el rol del reciclaje informal y los niveles variables de participación comunitaria [1]. Al proponer estrategias integrales basadas en evidencia recopilada directamente de los habitantes y contextualizadas con las políticas municipales, este estudio tiene el potencial de generar un impacto tangible en la calidad de vida de los residentes, reducir los riesgos sanitarios, fortalecer la cultura ciudadana y servir como modelo de intervención comunitaria en gestión de residuos sólidos.
+                </p>
+            </div>
+            
+            <div class="imagen-container">
+                <div class="imagen-placeholder" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3em;">✨</div>
+                        <div style="font-size: 1.2em; margin-top: 10px;">Hacia una Comunidad Limpia</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="referencias">
+                <h2>Referencias Bibliográficas</h2>
+                <ol>
+                    <li>
+                        R. C. Medina, D. Buelvas, J. E. Muñoz, y J. E. Giraldo Ruiz, "Gestión Inadecuada de Residuos Sólidos en Quintas de la Marina," presentado en Cultura Investigativa IV Semestre, Ingeniería de Software, Armenia, Colombia, 2025.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Cultura Investigativa - IV Semestre | Ingeniería de Software</p>
+            <p>Docente: Claudia Marcela Muñoz | 2025</p>
+        </div>
     </div>
-
-    <!-- Justificación y actividades (span 2) -->
-    <div class="panel panel-4" role="region" aria-label="Justificación y actividades">
-      <h2>Justificación</h2>
-      <p>La inadecuada gestión de residuos afecta la salud pública y la calidad de vida de la comunidad. Mejorar la infraestructura y la educación ciudadana reduce riesgos sanitarios por proliferación de plagas, protege las zonas verdes y promueve el cuidado del entorno urbano [2].</p>
-
-      <h2 style="margin-top:12px">Actividades propuestas</h2>
-      <ul>
-        <li>Jornadas de sensibilización puerta a puerta (2 semanas) con material informativo y talleres prácticos [2].</li>
-        <li>Colocación de señalética clara con horarios de recolección y recomendaciones para separación en la fuente [2].</li>
-        <li>Reuniones para conformar comité vecinal y coordinar con recicladores formales y la alcaldía [1][2].</li>
-      </ul>
-
-      <h2 style="margin-top:12px">Resultados esperados</h2>
-      <ul>
-        <li>Reducción visible de residuos alrededor del contenedor en 2 meses.</li>
-        <li>Mayor participación en separación en la fuente y recuperación de materiales reciclables.</li>
-        <li>Mejora en percepción de limpieza y disminución en proliferación de plagas.</li>
-      </ul>
-    </div>
-
-    <!-- Referencias -->
-    <div class="panel panel-5" role="region" aria-label="Referencias">
-      <h2>Referencias IEEE</h2>
-      <div class="refs">
-        <p>[1] R. C. Medina et al., "Gestión Inadecuada de Residuos Sólidos — Quintas de la Marina," Presentación PowerPoint, 2025. fileciteturn0file0</p>
-        <p>[2] Alcaldía de Armenia, "Plan de Gestión Integral de Residuos Sólidos (PGIRS)," Armenia Capital Verde, 2023. fileciteturn0file0</p>
-        <p>[3] Institución Universitaria EAM, "Lineamientos Parcial II — Cultura Investigativa," 2025. fileciteturn0file1</p>
-      </div>
-
-      <div style="margin-top:auto;padding-top:12px" class="footer-info">
-        <strong>Cultura Investigativa — Parcial II</strong><br>
-        Entrega: 8 de octubre de 2025 · Armenia, Quindío<br>
-        Integrantes: Roberto C. Medina · Dilan Buelvas · J. E. Muñoz · J. E. Giraldo Ruiz
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    function toggleColl(btn){ 
-      const content = btn.nextElementSibling;
-      const open = content.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-    }
-    // print button
-    document.getElementById('printBtn').addEventListener('click', function(e){
-      e.preventDefault();
-      window.print();
-    });
-  </script>
 </body>
 </html>
